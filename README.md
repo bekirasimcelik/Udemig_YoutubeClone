@@ -11,4 +11,5 @@
 - moment (zaman formatlama)
 
 - millify (sayı formatla)
+
 - tailwind (kurulum sitesinden)
