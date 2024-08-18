@@ -6,9 +6,9 @@ import Header from "./components/Header";
 const App = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<Header />} />
-        <Route path="/watch" element={<Feed />} />
+        <Route path="/" element={<Feed />} />
       </Routes>
     </BrowserRouter>
   );

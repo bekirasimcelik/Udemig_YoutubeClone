@@ -17,17 +17,17 @@ const Header = () => {
       <form className="flex border border-gray-400 rounded-[20px] overflow-hidden">
         <input
           type="text"
-          className="bg-black outline-none text-white px-5 py-2"
+          className="bg-black outline-none text-white px-5 py-2 border border-transparent focus:border-blue-500 rounded-l-[20px]"
         />
-        <button className="px-4 text-2xl bg-zinc-800">
+        <button className="px-4 text-2xl bg-zinc-800 hover:bg-zinc-600 transition duration-300">
           <IoIosSearch />
         </button>
       </form>
 
-      <div>
-        <FaBell />
-        <IoMdVideocam />
-        <MdVideoLibrary />
+      <div className="flex gap-3 text-xl cursor-pointer">
+        <FaBell className="hover:text-gray-400 transition duration-200" />
+        <IoMdVideocam className="hover:text-gray-400 transition duration-200" />
+        <MdVideoLibrary className="hover:text-gray-400 transition duration-200" />
       </div>
     </div>
   );
