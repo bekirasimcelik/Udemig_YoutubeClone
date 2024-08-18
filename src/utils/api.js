@@ -9,7 +9,7 @@ const api = axios.create({
 
   headers: {
     asd: "asd",
-    asd: "ssad",
+    asd2: "ssad",
   },
 });
 

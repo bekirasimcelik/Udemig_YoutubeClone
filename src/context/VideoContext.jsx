@@ -7,6 +7,8 @@ export const VideoContext = createContext();
 export const VideoProvider = ({ children }) => {
   const [videos, setVideos] = useState();
   const [category, setCategory] = useState(categories[0]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     let type = category.type;
@@ -22,7 +24,8 @@ export const VideoProvider = ({ children }) => {
         ? "/trending"
         : `/search?query=${category.name}`;
 
-    console.log();
+    // YÜklenme stat'ini true'ya çek
+    setIsLoading(true);
 
     // boşuna api isteği atmasın
     // return;
@@ -31,11 +34,14 @@ export const VideoProvider = ({ children }) => {
     api
       .get(url)
       .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => setIsLoading(false));
   }, [category]);
 
   return (
-    <VideoContext.Provider value={{ videos, category, setCategory }}>
+    <VideoContext.Provider
+      value={{ videos, category, setCategory, isLoading, error }}
+    >
       {children}
     </VideoContext.Provider>
   );

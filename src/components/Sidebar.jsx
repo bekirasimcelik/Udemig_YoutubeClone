@@ -4,7 +4,7 @@ import { categories } from "../utils/constants";
 import { VideoContext } from "../context/VideoContext";
 
 const Sidebar = () => {
-  const { setCategory } = useContext(VideoContext);
+  const { category, setCategory } = useContext(VideoContext);
 
   return (
     <div>
